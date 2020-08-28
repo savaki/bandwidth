@@ -1,0 +1,15 @@
+{
+  "callId": "c-d45a41e5-5eba9664-174a-4a1f-86ab-c947e393e4ee",
+  "callUrl": "https://voice.bandwidth.com/api/v2/accounts/5006788/calls/c-d45a41e5-5eba9664-174a-4a1f-86ab-c947e393e4ee",
+  "answerTime": "2020-08-27T00:01:31.633Z",
+  "cause": "hangup",
+  "eventType": "disconnect",
+  "accountId": "5006788",
+  "from": "+15105299511",
+  "startTime": "2020-08-27T00:01:26.104Z",
+  "to": "+14155318965",
+  "tag": "1geseBVuNG5GBycAhe1GGYSK8qr",
+  "endTime": "2020-08-27T00:01:33.660Z",
+  "applicationId": "d9bb5a15-9571-4d83-8c3d-8d11d8a6189a",
+  "direction": "outbound"
+}

@@ -1,15 +1,15 @@
 package bandwidth
 
-type Voice struct {
+type WebRTC struct {
 	client *client
 }
 
-func NewVoice(opts ...Option) *Voice {
-	const codebase = "https://voice.bandwidth.com/api/v2/accounts/"
+func NewWebRTC(opts ...Option) *WebRTC {
+	const codebase = "https://api.webrtc.bandwidth.com/v1/accounts"
 
 	options := buildOptions(opts...)
 	client := newClient(codebase, options.accountID, options.username, options.password)
-	return &Voice{
+	return &WebRTC{
 		client: client,
 	}
 }

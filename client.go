@@ -7,13 +7,15 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"os"
+	"strings"
 )
 
 type Error struct {
-	StatusCode  int
-	ID          string
-	Type        string
-	Description string
+	StatusCode  int    `json:"-"`
+	ID          string `json:"id,omitempty"`
+	Type        string `json:"type,omitempty"`
+	Description string `json:"description,omitempty"`
 }
 
 func (e Error) Error() string {
@@ -26,10 +28,9 @@ type client struct {
 	password string
 }
 
-func newClient(accountID, username, password string) *client {
-	codebase := "https://voice.bandwidth.com/api/v2/accounts/" + accountID
+func newClient(codebase, accountID, username, password string) *client {
 	return &client{
-		codebase: codebase,
+		codebase: strings.TrimRight(codebase, "/") + "/" + accountID,
 		username: username,
 		password: password,
 	}
@@ -60,10 +61,12 @@ func (c *client) Do(ctx context.Context, method, path string, body, v interface{
 	defer resp.Body.Close()
 
 	if resp.StatusCode >= 400 {
+		io.Copy(os.Stdout, resp.Body)
 		var e Error
 		if err := json.NewDecoder(resp.Body).Decode(&e); err != nil {
 			return fmt.Errorf("retrieved error for request, %v %v: %w", method, path, err)
 		}
+		e.StatusCode = resp.StatusCode
 		return e
 	}
 

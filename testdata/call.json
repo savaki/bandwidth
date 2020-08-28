@@ -1,0 +1,13 @@
+{
+  "callId": "c-3f758f24-a36b850d-87ec-471e-b1d5-198cbd0d07aa",
+  "accountId": "5006788",
+  "callUrl": "https://voice.bandwidth.com/api/v2/accounts/5006788/calls/c-3f758f24-a36b850d-87ec-471e-b1d5-198cbd0d07aa",
+  "answerTime": "2020-08-27T00:05:37.146Z",
+  "from": "+15105299511",
+  "startTime": "2020-08-27T00:05:31.766Z",
+  "eventType": "answer",
+  "to": "+14155318965",
+  "tag": "1get97jnI3bJkwm2MixftU8QfQb",
+  "applicationId": "d9bb5a15-9571-4d83-8c3d-8d11d8a6189a",
+  "direction": "outbound"
+}
